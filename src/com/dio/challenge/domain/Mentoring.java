@@ -2,26 +2,14 @@ package com.dio.challenge.domain;
 
 import java.time.LocalDate;
 
-public class Mentoring {
+public class Mentoring extends Subject{
 
-    private String title;
-    private String description;
     private LocalDate date;
 
-    public String getTitle() {
-        return title;
-    }
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
+    @Override
+    public double calcXp() {
+        return XP_default + 5;
     }
 
     public LocalDate getDate() {
@@ -34,9 +22,10 @@ public class Mentoring {
 
     @Override
     public String toString() {
-        return "Mentoring -"+ '\n'
-                +"title: " + title + '\n'
-                +"description: " + description + '\n'
+        return '\n'
+                +"Mentoring -"+ '\n'
+                +"title: " + getTitle() + '\n'
+                +"description: " + getDescription() + '\n'
                 +"date: " + date + '\n';
     }
 }
